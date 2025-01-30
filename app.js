@@ -3,8 +3,7 @@ const express = require('express');
 const Path = require('path');
 const app = express();
 const port = 3000;
-
-const db = require("./.config/mongoose-connect");
+const db = require("./config/mongoose-connect");
 const ownersRouter = require("./routes/ownersRouter");
 const usersRouter = require("./routes/usersRouter");
 const productsRouter = require("./routes/productsRouter");
