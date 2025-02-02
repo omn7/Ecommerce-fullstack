@@ -11,7 +11,14 @@ if (process.env.NODE_ENV !== 'development') {
         if (owner.length > 0) {
             return res.status(503).send('Owner already exists');
         }
-        res.send('Owner created');
+
+    let createdowner =    await ownerModel.ownerModel.create({
+                            fullname: req.body.fullname,
+                            email: req.body.email,
+                            password: req.body.password,
+            
+        });
+        res.status(203).send(createdowner);
    
             });
         }
